@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">JakaśFajnaNazwa</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<section id="generator">
+				<div class="page-header">
+					<h1 id="title">Generator kodu QR do sieci WiFi</h1>
+				</div>
+				<div id="qrcode-form-container">
+					<form id="qrcode-form">
+						<div class="form-group">
+							<label for="ssid" class="control-label">
+								Nazwa sieci (SSID)
+							</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon-ssid">
+										<i class="fas fa-signal"></i>
+									</span>
+								</div>
+								<input
+									type="text"
+									id="ssid"
+									name="ssid"
+									class="form-control"
+									placeholder="Nazwa sieci (SSID)"
+									aria-label="Nazwa sieci (SSID)"
+									aria-describedby="basic-addon-ssid"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="enc" class="control-label">
+								Typ zabezpieczeń
+							</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon-ssid">
+										<i class="fas fa-lock"></i>
+									</span>
+								</div>
+								<select name="enc" id="enc" class="form-control">
+									<option value="WPA">WPA/WPA2</option>
+									<option value="WEP">WEP</option>
+									<option value="nopass">Brak</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group" id="passphrase-key">
+							<label class="control-label">Hasło</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon-pass">
+										<i class="fas fa-key"></i>
+									</span>
+								</div>
+								<input
+									type="password"
+									id="key"
+									name="key"
+									class="form-control"
+									placeholder="Hasło"
+									aria-describedby="basic-addon-pass"
+									required
+								/>
+								<div class="input-group-append">
+									<button
+										class="btn btn-default"
+										type="button"
+										id="btn-display-key"
+									>
+										<i class="fas fa-eye" id="display-key-icon"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="pull-left control-label" for="hidden">
+								Ukryta sieć?
+							</label>
+							<div class="input-group">
+								<input
+									type="checkbox"
+									name="hidden"
+									id="hidden"
+									data-toggle="tooltip"
+									title="Czy ta sieć jest ukryta?"
+								/>
+							</div>
+						</div>
+
+						<div class="btn-group" role="group">
+							<button
+								type="button"
+								id="btn-generate-qrcode"
+								class="btn btn-primary"
+								title="Generuj kod QR"
+							>
+								Generuj
+							</button>
+							<button
+								type="button"
+								id="btn-export-qrcode"
+								class="btn"
+								title="Zapisz kod QR jako PNG"
+							>
+								Zapisz
+							</button>
+						</div>
+					</form>
+				</div>
+				<div id="qrcode-img"></div>
+			</section>
+		</div>
+
+		<footer class="footer">
+			<div class="container-fluid">
+				&copy; Aef
+			</div>
+		</footer>
+
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+		<script src="qrcode.js"></script>
+		<script src="jquery.qrcode.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

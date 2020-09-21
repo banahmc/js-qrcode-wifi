@@ -1,0 +1,60 @@
+#title,
+#qrcode-img {
+	text-align: center;
+}
+
+#qrcode-img canvas {
+	padding: 2em;
+}
+
+#generator {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#btn-export-qrcode {
+	display: none;
+}
+
+#hidden {
+	margin: 0px 0px 5px 5px;
+}
+
+.footer {
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 70px;
+	border-top: 1px solid #e5e5e5;
+	background-color: #f5f5f5;
+}
+.footer p {
+	margin-bottom: 0;
+	color: #777;
+}
+
+.anchor {
+	padding-top: 60px;
+	margin-top: -60px;
+}
+
+img {
+	border: 0;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#generator {
+		width: 60%;
+	}
+}
+
+@media (max-width: 767px) {
+	#generator {
+		width: 80%;
+	}
+
+	.footer {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
